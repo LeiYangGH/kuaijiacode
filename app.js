@@ -3,6 +3,33 @@ const openIdUrl = require('./config').openIdUrl
 App({
   onLaunch: function () {
     console.log('App Launch')
+    wx.downloadFile({
+      url: 'https://kuaijiamaocai.club/upload/food1', 
+      success: function (res) {
+        wx.playVoice({
+          filePath: "image/food1.jpg"
+        })
+      }
+    })
+
+    wx.downloadFile({
+      url: 'https://kuaijiamaocai.club/upload/food2',
+      success: function (res) {
+        wx.playVoice({
+          filePath: "image/food2.jpg"
+        })
+      }
+    })
+
+    wx.downloadFile({
+      url: 'https://kuaijiamaocai.club/upload/food3',
+      success: function (res) {
+        wx.playVoice({
+          filePath: "image/food3.jpg"
+        })
+      }
+    })
+
   },
   onShow: function () {
     console.log('App Show')
