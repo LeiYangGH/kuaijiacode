@@ -1,5 +1,6 @@
 Page({
   data: {
+    food1: "../../image/play.png",
     list: [
       {
         id: 'view',
@@ -37,6 +38,7 @@ Page({
       }
     ]
   },
+
   kindToggle: function (e) {
     var id = e.currentTarget.id, list = this.data.list;
     for (var i = 0, len = list.length; i < len; ++i) {
@@ -49,6 +51,22 @@ Page({
     this.setData({
       list: list
     });
+  },
+
+  tapName: function (e) {
+    var that=this;
+    wx.downloadFile({
+      url: 'https://leiyang-ge.top/upload/food1.jpg',
+      success: function (res) {
+        that.setData({
+          food1: res.tempFilePath
+        });
+      }
+    })
+
+    that.setData({
+        });
   }
+
 })
 
